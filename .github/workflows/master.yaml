@@ -13,6 +13,13 @@ jobs:
       contents: write
     steps:
     - uses: actions/checkout@v3
+    - name: Tag
+      uses: K-Phoen/semver-release-action@master
+      with:
+        release_branch: master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - uses: ncipollo/release-action@v1
       with:
        generateReleaseNotes: true
