@@ -23,4 +23,4 @@ jobs:
       with:
        generateReleaseNotes: true
        tag: ${{ steps.create_tag.outputs.new_tag }}
-       omitBody: true
+       removeArtifacts: true
